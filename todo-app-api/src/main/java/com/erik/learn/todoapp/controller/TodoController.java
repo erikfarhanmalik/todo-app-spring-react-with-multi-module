@@ -13,38 +13,39 @@ import java.util.List;
 @RestController
 @RequestMapping("/todo")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "http://localhost:8000")
 public class TodoController {
 
-    private final TodoRepository todoRepository;
+	private final TodoRepository todoRepository;
 
-    @GetMapping
-    public List<Todo> getTodoList() {
+	@GetMapping
+	public List<Todo> getTodoList() {
 
-        return todoRepository.findAll();
-    }
+		return todoRepository.findAll();
+	}
 
-    @GetMapping("/{id}")
-    public Todo getTodo(@PathVariable("id") String id) {
+	@GetMapping("/{id}")
+	public Todo getTodo(@PathVariable("id") String id) {
 
-        return todoRepository.findById(id).orElseThrow(ResourceNotFoundException::new);
-    }
+		return todoRepository.findById(id).orElseThrow(ResourceNotFoundException::new);
+	}
 
-    @PostMapping
-    public ResponseEntity<Todo> createTodo(@RequestBody Todo todo) {
-        Todo savedTodo = todoRepository.save(todo);
-        return new ResponseEntity<>(savedTodo, HttpStatus.CREATED);
-    }
+	@PostMapping
+	public ResponseEntity<Todo> createTodo(@RequestBody Todo todo) {
+		Todo savedTodo = todoRepository.save(todo);
+		return new ResponseEntity<>(savedTodo, HttpStatus.CREATED);
+	}
 
-    @PutMapping("/{id}")
-    public Todo updateTodo(@PathVariable("id") String id, @RequestBody Todo todo) {
-        todo.setId(id);
-        return todoRepository.save(todo);
-    }
+	@PutMapping("/{id}")
+	public Todo updateTodo(@PathVariable("id") String id, @RequestBody Todo todo) {
+		todo.setId(id);
+		return todoRepository.save(todo);
+	}
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity deleteTodo(@PathVariable("id") String id) {
+	@DeleteMapping("/{id}")
+	public ResponseEntity deleteTodo(@PathVariable("id") String id) {
 
-    	todoRepository.deleteById(id);
-        return ResponseEntity.ok().build();
-    }
+		todoRepository.deleteById(id);
+		return ResponseEntity.ok().build();
+	}
 }

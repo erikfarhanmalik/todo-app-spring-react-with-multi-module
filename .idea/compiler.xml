@@ -9,12 +9,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="todo-app-api" />
         <module name="todo-app-persistent" />
+        <module name="todo-app-ui" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="todo-app" target="1.8" />
       <module name="todo-app-api" target="1.8" />
       <module name="todo-app-persistent" target="1.8" />
+      <module name="todo-app-ui" target="1.8" />
       <module name="todoapppersistent" target="1.8" />
     </bytecodeTargetLevel>
   </component>

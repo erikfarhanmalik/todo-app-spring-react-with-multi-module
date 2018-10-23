@@ -12,6 +12,7 @@
 	<modules>
 		<module>todo-app-persistent</module>
 		<module>todo-app-api</module>
+		<module>todo-app-ui</module>
 	</modules>
 
 	<properties>
