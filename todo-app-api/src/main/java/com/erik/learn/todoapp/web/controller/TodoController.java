@@ -1,4 +1,4 @@
-package com.erik.learn.todoapp.controller;
+package com.erik.learn.todoapp.web.controller;
 
 import com.erik.learn.todoapp.model.Todo;
 import com.erik.learn.todoapp.repository.TodoRepository;

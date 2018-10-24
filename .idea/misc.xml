@@ -19,6 +19,7 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/todo-app-launcher/pom.xml" />
         <option value="$PROJECT_DIR$/todo-app-persistent/pom.xml" />
       </set>
     </option>
